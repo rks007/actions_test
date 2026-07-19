@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamLine | Premium Video Content</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Stream<span>Line</span></div>
+        <div class="nav-links">
+            <a href="#" class="active">Discover</a>
+            <a href="#">Categories</a>
+            <a href="#">My List</a>
+        </div>
+        <div class="profile-btn">Sign In</div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Master CI/CD Workflows v3</h1>
+            <p>Deploy faster, safer, and better with our premium automation masterclass.</p>
+            <button class="play-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+                Watch Now
+            </button>
+        </div>
+        <div class="hero-gradient"></div>
+    </header>
+
+    <main class="container">
+        <section class="video-section">
+            <h2 class="section-title">Trending Tutorials</h2>
+            <div class="video-grid" id="videoGrid">
+                <!-- Videos will be injected here via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Fetch mock video data from our simple API
+        fetch('/api/videos')
+            .then(res => res.json())
+            .then(data => {
+                const grid = document.getElementById('videoGrid');
+                data.forEach(video => {
+                    const card = document.createElement('div');
+                    card.className = 'video-card';
+                    card.innerHTML = `
+                        <div class="thumbnail">
+                            <div class="play-overlay">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>${video.title}</h3>
+                            <p class="author">${video.author}</p>
+                            <p class="views">${video.views} views</p>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            });
+    </script>
+</body>
+</html>
