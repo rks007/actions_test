@@ -20,7 +20,10 @@ jobs:
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+       
+      - name: Build docker image
+        run: docker build -t ${{ vars.DOCKERHUB_USERNAME }}/cicd-app:${{ github.sha }} .  
+        
+      - name: Push docker image
+        run: docker push ${{ vars.DOCKERHUB_USERNAME }}/cicd-app:${{ github.sha }}  
 
-
-  deploy-on_ec2:
-    runs-on: ubuntu-latest
