@@ -13,7 +13,8 @@ app.get('/api/videos', (req, res) => {
     { id: 1, title: 'Introduction to CICD', author: 'DevOps Master', views: '1.2M' },
     { id: 2, title: 'Dockerizing Node.js Apps', author: 'Container Guru', views: '850K' },
     { id: 3, title: 'GitHub Actions from Scratch', author: 'Automation Pro', views: '2.1M' },
-    { id: 4, title: 'Kubernetes for Beginners', author: 'Cloud Expert', views: '1.5M' }
+    { id: 4, title: 'Kubernetes for Beginners', author: 'Cloud Expert', views: '1.5M' },
+    { id: 5, title: 'CI/CD Best Practices', author: 'DevOps Evangelist', views: '900K' }
   ]);
 });
 
