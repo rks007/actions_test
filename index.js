@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Basic API route for video metadata
 app.get('/api/videos', (req, res) => {
   res.json([
-    { id: 1, title: 'Introduction to CI/CD', author: 'DevOps Master', views: '1.2M' },
+    { id: 1, title: 'Introduction to CICD', author: 'DevOps Master', views: '1.2M' },
     { id: 2, title: 'Dockerizing Node.js Apps', author: 'Container Guru', views: '850K' },
     { id: 3, title: 'GitHub Actions from Scratch', author: 'Automation Pro', views: '2.1M' }
   ]);
