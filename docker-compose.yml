@@ -1,7 +1,7 @@
 
 services:
   app:
-    image: rks007/cicd-app:f5d9ffaa5106cc052ca1c1f7dd799fa43e5f536b
+    image: rks007/cicd-app:d36e61b6fb6cc054a46fc5f3f374c14ebaab055c
     container_name: "CICD-app"
 
     ports:
